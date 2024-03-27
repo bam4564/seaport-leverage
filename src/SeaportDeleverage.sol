@@ -212,8 +212,8 @@ contract SeaportDeleverage is SeaportBase {
             revert C1StartAmountMustBeDebtToRepay(consideration1.startAmount, debtToRepay);
         if (consideration1.endAmount != debtToRepay) 
             revert C1EndAmountMustBeDebtToRepay(consideration1.endAmount, debtToRepay);
-        if (consideration1.recipient != msg.sender) 
-            revert C1RecipientMustBeSender(consideration1.recipient);
+        // if (consideration1.recipient != msg.sender) 
+        //     revert C1RecipientMustBeSender(consideration1.recipient);
 
         ConsiderationItem calldata consideration2 = params.consideration[1];
         

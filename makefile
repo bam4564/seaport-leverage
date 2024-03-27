@@ -63,10 +63,18 @@ deploy_ion_seaport_deleverage: deal_eth_ion_deployer
 # Yields the following outputs when run successfully
 # Deployer: 0x4Fb386F5E85b355cEc4eB1A491Ab76ecA19Bd5C9
 # Deployed to: 0x045dB163d222BdD8295ca039CD0650D46AC477f3
-# Transaction hash: 0xf14f34f521a06c333ee466fbfca619590d97674a5f0af4bf8d5ea9e1c82ce98d
+# Transaction hash: 0x4ccbd8db9b129aa18a7332b888a3ea64531f882957ec8107d9266cd9014f39f0
 
-run_seaport_deleverage: 
-	forge script script/HourglassDeleverage.s.sol --rpc-url ${LOCAL_RPC_URL} --private-key ${LOCAL_ION_DEPLOYER_PKEY} -vvvv --broadcast --ffi
+run_seaport_deleverage_logic: 
+	forge script script/HourglassDeleverageLogic.s.sol --rpc-url ${LOCAL_RPC_URL} --private-key ${LOCAL_ION_DEPLOYER_PKEY} -vvvv --broadcast --ffi
+
+run_seaport_deleverage_debt: 
+	forge script script/HourglassDeleverageLogicDebt.s.sol --rpc-url ${LOCAL_RPC_URL} --private-key ${LOCAL_ION_DEPLOYER_PKEY} -vvvv --broadcast --ffi
+
+
+
+run_seaport_deleverage_e2e: 
+	forge script script/HourglassDeleverageE2E.s.sol --rpc-url ${LOCAL_RPC_URL} --private-key ${LOCAL_ION_DEPLOYER_PKEY} -vvvv --broadcast --ffi
 
 
 
